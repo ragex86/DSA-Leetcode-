@@ -18,8 +18,7 @@ public:
                 }else if(sum>0){
                     k--;
                 }else{
-                    vector<int>temp = {nums[i],nums[j],nums[k]};
-                    ans.push_back(temp);
+                    ans.push_back({nums[i],nums[j],nums[k]});
                     j++;
                     k--;
 

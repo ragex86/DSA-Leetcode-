@@ -14,28 +14,28 @@ public:
         if(head==NULL || head->next==NULL){
             return head;
         }
-        ListNode * dummy = new ListNode(0);
+        ListNode * dummy = new ListNode (0);
         ListNode * temp = dummy;
-        ListNode * odd = head;
         ListNode * even = head->next;
-       
+        ListNode * odd = head;
+        
 
-        while(even!=NULL && even->next!=NULL){
-                   odd->next = even->next;
-                  odd = odd->next;
-                   temp->next = even;
-                   temp = even;
-                   temp->next = NULL;
-                   even= odd->next;
+        while(even!=NULL&&even->next!=NULL){
+            odd->next = even->next;
+            odd = odd->next;
+            temp->next = even;
+            temp=even;
+           temp->next = NULL;
+           even = odd->next;
         }
         if(even!=NULL){
             temp->next = even;
             temp = even;
             temp->next = NULL;
         }
-
         odd->next = dummy->next;
         return head;
+
+
     }
-    
 };
